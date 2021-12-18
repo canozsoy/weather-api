@@ -1,0 +1,19 @@
+{
+    "extends": [
+        "airbnb-base"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "import/extensions": [
+            "error",
+            "always",
+            {
+                "ignorePackages": true
+            }
+        ],
+        "no-console": "off"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "weather_app_api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "start": "node app.js",
+        "devstart": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "can ozsoy",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "joi": "^17.5.0",
+        "mongoose": "^6.1.2"
+    },
+    "devDependencies": {
+        "eslint": "^8.4.1",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.3",
+        "nodemon": "^2.0.15"
+    }
+}
