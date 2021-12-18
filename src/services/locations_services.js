@@ -43,17 +43,29 @@ const updateLocation = async (id, body) => {
     ).lean()
         .exec();
 
-    console.log(location);
+    if (!location) {
+        throw new Error('LOCATION_NOT_FOUND');
+    }
+
+    return location;
+};
+
+const deleteLocation = async (id) => {
+    const location = await Locations.findByIdAndRemove(id)
+        .lean()
+        .exec();
 
     if (!location) {
         throw new Error('LOCATION_NOT_FOUND');
     }
 
-    console.log(location);
-
-    return location;
+    return null;
 };
 
 export default {
-    getAllLocations, createLocation, findLocation, updateLocation,
+    getAllLocations,
+    createLocation,
+    findLocation,
+    updateLocation,
+    deleteLocation,
 };

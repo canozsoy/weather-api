@@ -19,8 +19,12 @@ router.route('/:id')
         locationsController.weatherGet,
     )
     .put(
-        locationsValidation('locationPut'),
+        locationsValidation('locationGet', 'params'), // check the req.params id
+        locationsValidation('locationPut', 'body'), // check req.body
         locationsController.locationPut,
+    )
+    .delete(
+        locationsValidation('locationGet', 'params'),
+        locationsController.locationDelete,
     );
-
 export default router;

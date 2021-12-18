@@ -65,9 +65,22 @@ const locationPut = async (req, res, next) => {
     return res.json(new ApiResponse(updatedLocation));
 };
 
+const locationDelete = async (req, res, next) => {
+    const { id } = req.params;
+
+    try {
+        await locationsServices.deleteLocation(id);
+    } catch (err) {
+        return next(err);
+    }
+
+    return res.json(new ApiResponse());
+};
+
 export default {
     locationGetAll,
     locationPost,
     weatherGet,
     locationPut,
+    locationDelete,
 };
